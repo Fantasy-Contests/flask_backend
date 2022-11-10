@@ -10,5 +10,3 @@ league = League(
 def current_week():
     currentweek = league.current_week
     return currentweek
-
-#print(current_week())

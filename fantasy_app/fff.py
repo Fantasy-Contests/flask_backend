@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 from dotenv import load_dotenv
-from espn_api_submodule.espn_api.football.league import League
+from .espn_api_submodule.espn_api.football.league import League
 
 load_dotenv()
 LEAGUE_ID = os.getenv('LEAGUE_ID')

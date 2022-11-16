@@ -24,4 +24,4 @@ league = League(
     year=get_year(),
     espn_s2=ESPN_S2,
     swid=SWID
-    )
+    ) 

@@ -1,7 +1,7 @@
 # Third-party imports
-from flask import Flask
+from flask import Flask, jsonify, request
 ##from decouple import config
-
+from .fff import current_week
 
 def create_app():
 
@@ -15,7 +15,11 @@ def create_app():
 
     @app.route('/')
     def hello1():
-        return 'Hello, World!!!'
+        return 'Hello, World!!!!'
+
+    @app.route('/test_submodule', methods=['GET', 'POST'])
+    def submodule():
+        week = current_week()
+        return str(week)
 
     return app
-

@@ -26,4 +26,5 @@ league = League(
     swid=SWID
     )
 
-print(league)
+def current_week():
+    return league.current_week

@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 from dotenv import load_dotenv
-from .espn_api_submodule.espn_api.football.league import League
+from espn_api_submodule.espn_api.football.league import League
 
 #load environment variables
 load_dotenv()
@@ -25,3 +25,5 @@ league = League(
     espn_s2=ESPN_S2,
     swid=SWID
     )
+
+print(league)

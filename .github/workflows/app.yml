@@ -20,7 +20,8 @@ jobs:
         ESPN_S2: ${{ secrets.ESPN_S2 }}
         LEAGUE_ID: ${{ secrets.LEAGUE_ID }}
         SWID: 4{{ secrets.SWID }}
-      with:
-        gcov_ignore: fantasy_app/espn_api_submodule
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v3
+
+      with:
+        gcov_ignore: fantasy_app/espn_api_submodule

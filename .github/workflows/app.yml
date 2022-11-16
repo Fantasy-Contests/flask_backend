@@ -18,3 +18,6 @@ jobs:
       run: pytest --cov fantasy_app
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v3
+
+      with:
+        gcov_ignore: fantasy_app/espn_api_submodule

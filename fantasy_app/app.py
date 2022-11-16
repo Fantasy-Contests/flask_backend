@@ -16,12 +16,12 @@ def create_app():
     @app.route('/')
     def hello1():
         return 'Hello, World!!!'
-
+    '''
     @app.route('/test_submodule', methods=['GET', 'POST'])
     def submodule():
         week = current_week()
         return str(week)
-
+    '''
 
     return app
 

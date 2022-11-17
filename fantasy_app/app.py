@@ -1,7 +1,10 @@
 # Third-party imports
 from flask import Flask, jsonify, request
+import json
 ##from decouple import config
-from .fff import current_week
+from .fff import current_week, get_current_matchups, get_yards, order_positions_by_points
+from .contest_list import contests
+
 
 def create_app():
 
@@ -21,5 +24,12 @@ def create_app():
     def submodule():
         week = current_week()
         return str(week)
-
+    
+    @app.route('/most_points', methods=['GET', 'POST'])
+    def calculate_yards():
+        position =  'total_punter_points'
+        points = get_yards(contests[position]['position_list'], 'puntYards')
+        ranks = order_positions_by_points(points)
+        data = json.dumps(ranks)
+        return data
     return app

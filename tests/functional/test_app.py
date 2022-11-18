@@ -17,3 +17,4 @@ def test_submodule_route(app):
     response = app.get('/test_submodule')
 
     assert response.status_code == 200
+    assert type(response) is str

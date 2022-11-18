@@ -2,7 +2,7 @@
 from flask import Flask, jsonify, request
 import json
 ##from decouple import config
-from .fff import current_week, get_highest, order_positions_by_points
+from .fff import current_week, get_highest, order_positions_by_points, get_most_position_points
 from .contest_list import contests
 
 
@@ -28,7 +28,7 @@ def create_app():
     @app.route('/most_points', methods=['GET', 'POST'])
     def calculate_yards():
         position =  'total_punter_points'
-        points = get_highest(contests[position]['position_list'], 'puntYards')
+        points = get_most_position_points(contests[position]['position_list'], 8)
         ranks = order_positions_by_points(points)
         data = json.dumps(ranks)
         return data

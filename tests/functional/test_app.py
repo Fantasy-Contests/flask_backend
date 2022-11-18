@@ -14,6 +14,6 @@ def test_main_route(app):
     assert response.data.decode('utf-8') == 'Hello, World!!!!'
 
 def test_submodule_route(app):
-    response = app.get('/test_submodule'):
+    response = app.get('/test_submodule')
 
     assert response.status_code == 200

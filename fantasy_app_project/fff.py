@@ -9,6 +9,8 @@ LEAGUE_ID = os.getenv('LEAGUE_ID')
 ESPN_S2 = os.getenv('ESPN_S2')
 SWID = os.getenv('SWID')
 
+def hello11():
+    return "Hellllooooooo"
 
 # retrieve football year
 def get_year():
@@ -22,7 +24,7 @@ def get_year():
 # create league instance
 league = League(
     league_id=LEAGUE_ID,
-    year=get_year(),
+    year=2021,
     espn_s2=ESPN_S2,
     swid=SWID
     )
@@ -128,12 +130,13 @@ def get_most_position_points(position, currentweek=0):
                     player_dict[matchup.home_team.team_name] = {'player': {(player.name): player.points}}
 
     return player_dict
-dict1 = get_most_position_points(['WR'], 8)
+
+dict1 = get_most_position_points(['QB'], 8)
+
 def order_positions_by_points(player_dict):
 
     for team, info in player_dict.items():
         player_dict[team].update({'total' : round(sum(info['player'].values()), 2)})
-    result = dict(sorted(player_dict.items(), key=lambda x: x[1]['total'], reverse=True))
+    result = list(sorted(player_dict.items(), key=lambda x: x[1]['total'], reverse=True))
 
     return result
-print(order_positions_by_points(dict1))

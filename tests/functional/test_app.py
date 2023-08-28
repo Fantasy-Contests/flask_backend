@@ -1,5 +1,5 @@
 import pytest
-from fantasy_app_project.app import create_app
+from app import create_app
 
 
 @pytest.fixture
@@ -17,4 +17,8 @@ def test_submodule_route(app):
     response = app.get('/test_submodule')
 
     assert response.status_code == 200
-    assert type(response) is str
+
+def test_most_points_route(app):
+    response = app.get('/most_points')
+
+    assert response.status_code == 200

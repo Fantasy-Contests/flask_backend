@@ -1,7 +1,7 @@
 # Third-party imports
 from flask import Flask, jsonify, request
 ##from decouple import config
-from .fantasy_app.fff import current_week
+from fantasy_app.fff import current_week
 
 
 

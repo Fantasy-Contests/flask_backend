@@ -1,10 +1,9 @@
 import os
 from datetime import datetime
-from dotenv import load_dotenv
+import os
 from .espn_api_submodule.espn_api.football.league import League
 
 #load environment variables
-load_dotenv()
 LEAGUE_ID = os.getenv('LEAGUE_ID')
 ESPN_S2 = os.getenv('ESPN_S2')
 SWID = os.getenv('SWID')
